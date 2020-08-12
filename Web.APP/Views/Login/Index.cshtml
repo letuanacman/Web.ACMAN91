@@ -1,0 +1,70 @@
+﻿
+@model Web.APP.Models.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ACMan Login</title>
+    <link href="~/Content/css/style_Login.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <img class="wave" src="~/Content/Images/wave.png">
+
+    <div class="container">
+        <div class="img">
+            @*<img src="~/Content/Images/bg1.svg">*@
+        </div>
+        <div class="login-content">
+            @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { id = "loginForm" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, null, new { @class="alert alert-danger"})
+                @*<form action="Hoadon">*@
+                @*<img src="img/avatar.svg">*@
+                <img class="img_logo_acman" src="~/Content/Images/AC-man.jpg" />
+                <h1 class="title"></h1>
+                <div class="input-div data">
+                    <div class="i">
+                        <i class="fa fa-database"></i>
+                    </div>
+                    <div class="div">
+                        @*<h5>Tên dữ liệu</h5>
+                        <input type="text" class="input">*@
+                        @Html.TextBoxFor(m => m.TEN_DATA, new { @placeholder = "Tên dữ liệu", @class = "form-control", @autofocus = true, @required = ""})
+                    </div>
+                </div>
+                <div class="input-div username">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        @*<h5>Tên đăng nhập</h5>
+                        <input type="text" class="input">*@
+                        @Html.TextBoxFor(m => m.TEN_DANGNHAP, new { @placeholder = "Tên đăng nhập", @class = "form-control", @autofocus = false , @required = "" })
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        @*<h5>Mật khẩu</h5>
+        <input type="password" class="input">*@
+                        @Html.TextBoxFor(m => m.MAT_KHAU, new { @placeholder = "Mật khẩu", @class = "form-control", @autofocus = false, @required = "" })
+                    </div>
+                </div>
+                @*<a href="Hoadon1">Quên mật khẩu?</a>*@
+                <input type="submit" class="btn" value="Đăng nhập">
+                @*</form>*@
+            }
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Content/js/main.js"></script>
+</body>
+</html>

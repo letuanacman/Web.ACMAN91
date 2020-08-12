@@ -1,0 +1,140 @@
+﻿:root {
+    --maunen: #f7f1f1;
+    --maunen-menu-bar: #1348A8;
+    --maunen-menu-bar-hover: #137cfe;
+    --mauchu-menu-bar: white;
+    --mauchu-menu-bar-hover: #137cfe;
+    --docao-menu-bar: 60px;
+    --fontzise-menu-bar: 15px;
+    --fontzise-menu-bar-pm: 18px;
+}
+/*document.body.style.setProperty('--maunen-menu-bar',"#6c0")*/
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline-style: none;
+    box-sizing: border-box;
+}
+body {
+    /*background: url(../../Content/Images/GiaoDien.jpg);
+    background-size: auto;
+    background-position: center;*/
+    font-family: Montserrat;
+    font-size: var(--fontzise-menu-bar);
+    background:var(--maunen);
+}
+.menu-bar {
+    background: var(--maunen-menu-bar);
+    height: var(--docao-menu-bar);
+    width: 100%;
+    /*text-align: center;*/
+}
+
+   
+    .menu-bar label {
+        justify-content: flex-start;
+        text-align: left;
+        color: var(--mauchu-menu-bar);
+        font-weight: bold;
+        line-height: var(--docao-menu-bar);
+        padding: 5px 5px;
+        font-size: var(--fontzise-menu-bar-pm);
+    }
+
+.img_logo_acman {
+    justify-content: flex-start;
+    display: inline-block;
+    /*position: center;*/
+    vertical-align: middle;
+    width: auto;
+    height: var(--docao-menu-bar);
+    overflow: hidden;
+    padding: 5px 5px ; 
+    /*border-radius: 50%;*/ /* tao anh hinh tron avtar*/
+}
+.ten_user {
+    float: right;
+    text-align: left;
+    color: var(--mauchu-menu-bar);
+    /*font-weight: bold;*/
+    vertical-align: middle;
+    padding: 5px 5px;
+    text-decoration: none;
+    margin: 10px;
+}
+.img_user {
+    float: right;
+    justify-content: flex-start;
+    display: inline-block;
+    position: center;
+    vertical-align: middle;
+    width: var(--docao-menu-bar);
+    height: var(--docao-menu-bar);
+    overflow: hidden;
+    padding: 5px 5px;
+    border-radius: 50%; /* tao anh hinh tron avtar*/
+}
+
+.menu-bar ul {
+    display: inline-block;
+    list-style: none;
+    color: var(--mauchu-menu-bar);
+    text-decoration: none;
+    margin-left: 60px;
+}
+    .menu-bar ul li {
+        display:inline-block;
+        width: auto;
+        padding: 5px;
+        margin: 5px;        
+    }
+    .menu-bar ul li a {
+        text-decoration: none;
+        color: var(--mauchu-menu-bar);
+    }
+.active, .menu-bar ul li:hover {
+    background-color: var(--maunen-menu-bar-hover) ;
+    border-radius :5px;
+}
+.sub-menu1 {
+    display: none; 
+}
+.menu-bar ul li:hover .sub-menu1 {
+    display: block;
+    position: absolute;
+    background: var(--maunen-menu-bar);
+    margin-top: 5px;
+    margin-left: -15px;
+}
+.menu-bar ul li:hover .sub-menu1 ul {
+    display: block;
+     margin:5px;
+}
+    .menu-bar ul li:hover .sub-menu1 ul li {
+        width: auto;
+        display: block;
+        padding: 5px;
+        border-bottom: 1px dotted #3089f6;
+        background: transparent;
+        border-radius: 0px;
+        text-align: left;
+    }
+    .menu-bar ul li:hover .sub-menu1 ul li:last-child {
+        border-bottom:none;
+    }
+
+        .menu-bar ul li:hover .sub-menu1 ul li a:hover {
+            color: var(--mauchu-menu-bar-hover)
+        }
+sub-menu-user {
+    display: none;
+}
+
+.ten_user:hover .sub-menu-user {
+    display: block;
+    background: var(--maunen-menu-bar);
+    /*margin-top: 5px;
+    margin-lef*/t: -15px;
+}
+
