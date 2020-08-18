@@ -7,6 +7,7 @@ using Web.BL;
 using Web.Entities;
 using Web.APP.Models;
 using Web.APP.Extentions;
+using Web.Entities.Doanh_Nghiep;
 
 namespace Web.APP.Controllers
 {
@@ -30,20 +31,26 @@ namespace Web.APP.Controllers
                     var Chuoi = _BL_LoginData.GetData_DoanhNghiep(model.TEN_DATA);
                     if (Chuoi != "")
                     {
-                        Login_Info _Info = new Login_Info()
+                        Session["DN_ConnectString"] = Chuoi;
+                        DN_BL_Login _BL_Login = new DN_BL_Login();
+                        DN_Entity_UserList _Login = new DN_Entity_UserList();
+                        _Login = _BL_Login.KiemTraDangNhap(model.TEN_DANGNHAP, SecurityExtention.MaHoaMD5(model.MAT_KHAU), Chuoi);
+                        if (_Login.USERNAME != null)
                         {
-                            Chuoi_KetNoi = Chuoi,
-                            UserName = model.TEN_DANGNHAP
-                        };
+                            Session["User_DN"] = new Login_Info()
+                            { U_ID = _Login.U_ID, TEN_DANGNHAP = _Login.USERNAME, FULLNAME = _Login.FULLNAME, TEN_DATA = model.TEN_DATA };
 
-                        Session["Login_Info"] = SecurityExtention.GetPackageServiceJson(_Info);
-                        return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Index", "Home");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Sai thông tin Đăng nhập & Mật khẩu");
+                        }
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Sai thông tin");
+                        ModelState.AddModelError("", "Sai thông tin Đăng nhập");
                     }
-
                 }
                 catch (Exception e)
                 {
@@ -55,6 +62,11 @@ namespace Web.APP.Controllers
                 ModelState.AddModelError("", "Bạn chưa nhập thông tin");
             }
             return View(model);
+        }
+        public ActionResult LogOut()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home" ); 
         }
     }
 }

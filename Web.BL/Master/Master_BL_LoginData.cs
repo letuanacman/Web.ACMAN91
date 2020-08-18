@@ -21,8 +21,8 @@ namespace Web.BL
                 if (obj.Server != null)
                 {
                     //connectionString="Persist Security Info=False;Initial Catalog=ACMAN_HOADON_DIENTU; Data Source=171.244.27.197; user id=acman_hoadondientu; password=acman_hoadondientu!@#; Connection Timeout=140;"
-                    Chuoi = "Persist Security Info=False;Initial Catalog=" + obj.Server.ToUpper().ToString();
-                    Chuoi += "; user id=" + obj.TenData.ToUpper().ToString() + "; password=" + obj.PassWord.ToUpper().ToString() + "; Connection Timeout=140;";
+                    Chuoi = "Persist Security Info=False;Initial Catalog=" + obj.TenData.ToUpper().ToString() +"; Data Source=" + obj.Server.ToUpper().ToString();
+                    Chuoi += "; user id=" + obj.UserName.ToUpper().ToString() + "; password=" + obj.PassWord.ToUpper().ToString() + "; Connection Timeout=140;";
                 }
 
             }

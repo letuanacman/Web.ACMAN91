@@ -24,7 +24,7 @@
             @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { id = "loginForm" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true, null, new { @class="alert alert-danger"})
+
                 @*<form action="Hoadon">*@
                 @*<img src="img/avatar.svg">*@
                 <img class="img_logo_acman" src="~/Content/Images/AC-man.jpg" />
@@ -35,8 +35,8 @@
                     </div>
                     <div class="div">
                         @*<h5>Tên dữ liệu</h5>
-                        <input type="text" class="input">*@
-                        @Html.TextBoxFor(m => m.TEN_DATA, new { @placeholder = "Tên dữ liệu", @class = "form-control", @autofocus = true, @required = ""})
+                    <input type="text" class="input">*@
+                        @Html.TextBoxFor(m => m.TEN_DATA, new { @placeholder = "Tên dữ liệu", @class = "form-control", @autofocus = true, @required = "" })
                     </div>
                 </div>
                 <div class="input-div username">
@@ -45,8 +45,8 @@
                     </div>
                     <div class="div">
                         @*<h5>Tên đăng nhập</h5>
-                        <input type="text" class="input">*@
-                        @Html.TextBoxFor(m => m.TEN_DANGNHAP, new { @placeholder = "Tên đăng nhập", @class = "form-control", @autofocus = false , @required = "" })
+                    <input type="text" class="input">*@
+                        @Html.TextBoxFor(m => m.TEN_DANGNHAP, new { @placeholder = "Tên đăng nhập", @class = "form-control", @autofocus = false, @required = "" })
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -55,13 +55,15 @@
                     </div>
                     <div class="div">
                         @*<h5>Mật khẩu</h5>
-        <input type="password" class="input">*@
-                        @Html.TextBoxFor(m => m.MAT_KHAU, new { @placeholder = "Mật khẩu", @class = "form-control", @autofocus = false, @required = "" })
+                    <input type="password" class="input">*@
+                        @Html.TextBoxFor(m => m.MAT_KHAU, new { @placeholder = "Mật khẩu", @class = "form-control", @autofocus = false, @required = "*", @type = "password" })
                     </div>
                 </div>
+                @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
                 @*<a href="Hoadon1">Quên mật khẩu?</a>*@
                 <input type="submit" class="btn" value="Đăng nhập">
                 @*</form>*@
+
             }
         </div>
     </div>

@@ -7,7 +7,9 @@ namespace Web.APP.Models
 {
     public class Login_Info
     {
-        public string Chuoi_KetNoi { get; set; }
-        public string UserName { get; set; }
+        public string TEN_DATA { get; set; }
+        public string TEN_DANGNHAP { get; set; }
+        public String FULLNAME { get; set; }
+        public int U_ID { get; set; }
     }
 }
