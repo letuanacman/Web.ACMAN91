@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ACMan - Quản trị Doanh nghiệp </title>
+    <title>ACMan - Kế toán </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -37,14 +37,18 @@
         <!-- Header -->
         @RenderPage("_Header.cshtml")
         <!-- /.Header -->
-        
         <!-- Left Menu -->
-        @RenderPage("_LeftMenuErp.cshtml")
+        @RenderPage("_LeftMenuKetoan.cshtml")
         <!-- /.Left Menu  -->
-        
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-           @RenderBody()           
+            <!-- Content Header (Page header) -->
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <section class="content">
+                @RenderBody()
+            </section>
+            <!-- /.content -->
         </div>
 
         <!-- /.content-wrapper -->

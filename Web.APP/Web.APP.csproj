@@ -123,6 +123,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KetoanController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Extentions\SecurityExtention.cs" />
     <Compile Include="Global.asax.cs">
@@ -2269,6 +2270,12 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_LeftMenuERP.cshtml" />
+    <Content Include="Views\Shared\_LayoutKeToan.cshtml" />
+    <Content Include="Views\Shared\_LeftMenuKetoan.cshtml" />
+    <Content Include="Views\Ketoan\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
