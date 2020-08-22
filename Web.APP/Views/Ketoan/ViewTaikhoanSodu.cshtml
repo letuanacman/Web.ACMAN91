@@ -1,0 +1,614 @@
+﻿
+@{
+    ViewBag.Title = "Hệ thống tài khoản số dư";
+    Layout = "~/Views/Shared/_LayoutKeToan.cshtml";
+}
+@model IEnumerable<Web.Entities.DN_Entity_BangTK>
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h3 class="m-0 text-dark">Hệ thống Tài khoản và số dư </h3>
+            </div><!-- /.col -->
+            <div class="col-sm-6 text-right">
+                <a href="" class="btn btn-sm btn-success"> Thêm tài khoản </a>
+            </div>
+
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">            
+                <div class="card">                  
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="Tbl_TaiKhoanSoDu" class="table table-bordered table-striped">
+                            <thead>
+                                <tr  class="text-center">
+                                    <th>Số TK</th>
+                                    <th>Tên tài khoản</th>
+                                    <th>Dư nợ</th>
+                                    <th>Dư có</th>
+                                    <th>ĐK Chi tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1111</td>
+                                    <td> Tiền mặt</td>
+                                    <td class="text-right">1.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1112</td>
+                                    <td> Tiền Ngoại tệ</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>112</td>
+                                    <td> Tiền Ngân hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1121</td>
+                                    <td> Tiền Ngân hàng VIB</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>131</td>
+                                    <td> Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1311</td>
+                                    <td> Phải trả Khách hàng</td>
+                                    <td class="text-right">2.000.000</td>
+                                    <td class="text-right"> 0</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th> </th>
+                                    <th class="text-center">Tổng</th>
+                                    <th class="text-right">1.000.000.000</th>
+                                    <th class="text-right">2.000.000.000</th>
+                                    <th> </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

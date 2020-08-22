@@ -11,12 +11,12 @@ namespace Web.APP.Extentions
 {
     public class SecurityExtention
     {
-        public static Login_Info GetPackageService(string stringObject)
+        public static LoginInfoModel GetPackageService(string stringObject)
         {
-            return new JavaScriptSerializer().Deserialize<Login_Info>(stringObject);
+            return new JavaScriptSerializer().Deserialize<LoginInfoModel>(stringObject);
         }
 
-        public static string GetPackageServiceJson(Login_Info obj)
+        public static string GetPackageServiceJson(LoginInfoModel obj)
         {
             return new JavaScriptSerializer().Serialize(obj);
         }

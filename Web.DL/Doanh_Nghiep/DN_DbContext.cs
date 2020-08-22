@@ -21,10 +21,6 @@ namespace Web.DL
         protected string ConnStr = "";
         public DN_DbContext()
         {
-        }
-
-        public DN_DbContext(string Connstr1)
-        {
             try
             {
                 ConnStr = HttpContext.Current.Session["DN_ConnectString"].ToString().Trim();
@@ -34,9 +30,9 @@ namespace Web.DL
 
                 throw;
             }
-            ConnStr = Connstr1;
-
         }
+
+        
         public SqlConnection DN_ConnectionString()
         {
             try
