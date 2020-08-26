@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Doanh_Nghiep\DN_Entity_BangTK.cs" />
     <Compile Include="Doanh_Nghiep\DN_Entity_Donvi.cs" />
+    <Compile Include="Doanh_Nghiep\DN_Entity_ShopBanHang.cs" />
     <Compile Include="Doanh_Nghiep\DN_Entity_UserList.cs" />
     <Compile Include="Master\Master_Entity_LoginData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

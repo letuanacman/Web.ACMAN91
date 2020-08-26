@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "Hệ thống tài khoản số dư";
+    Layout = "~/Views/Shared/_LayoutKeToan.cshtml";
+}
+@using Web.APP.Extentions;
+
+@model IEnumerable<Web.Entities.DN_Entity_BangTK>
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h3 class="m-0 text-dark">Hệ thống tài khoản và số dư </h3>
+            </div><!-- /.col -->
+            <div class="col-sm-6 text-right">
+                <a href="" class="btn btn-sm btn-success"> Thêm tài khoản </a>
+                <a href="" class="btn btn-sm btn-success"> Xuất ra excel</a>
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="Tbl_TaiKhoanSoDu" class="table table-bordered table-hover">
+                            <thead>
+                                <tr class="text-center">
+                                    <th style="width: 1%">@Html.DisplayNameFor(model => model.CAPTK)</th>
+                                    <th style="width: 10%">@Html.DisplayNameFor(model => model.SO_TK)</th>
+                                    <th style="width: 35%">@Html.DisplayNameFor(model => model.TEN_TK)</th>
+                                    <th style="width: 10%">@Html.DisplayNameFor(model => model.DU_NO)</th>
+                                    <th style="width: 10%">@Html.DisplayNameFor(model => model.DU_CO)</th>
+                                    <th style="width: 23%">@Html.DisplayNameFor(model => model.GHICHU)</th>
+                                    <th style="width: 10%">@Html.DisplayNameFor(model => model.CT)</th>
+                                    <th style="width: 1%">@Html.DisplayNameFor(model => model.SUDUNG)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td> @Html.DisplayFor(modemitem => item.CAPTK)</td>
+                                        <td> @Html.DisplayFor(modemitem => item.SO_TK)</td>
+                                        <td> @Html.DisplayFor(modemitem => item.TEN_TK)</td>
+                                        <td class="text-right">
+                                            @( DinhDangModul.GetDinhDangGiaTien( item.DU_NO.GetValueOrDefault(0)))
+                                            @*  @Html.DisplayFor(modemitem => item.DU_NO)*@
+                                        </td>
+                                        <td class="text-right">
+                                            @( DinhDangModul.GetDinhDangGiaTien( item.DU_CO.GetValueOrDefault(0)))
+                                            @*    @Html.DisplayFor(modemitem => item.DU_CO)*@
+                                        </td>
+                                        <td> @Html.DisplayFor(modemitem => item.GHICHU)</td>
+                                        <td class="text-right">
+                                            @*<div class="row">
+                                                    <div class="col-4">
+                                                        @{
+                                                            if (item.CT.ToUpper() == "YES")
+                                                            {
+                                                                <a href="" class="btn btn-success btn-xs"> Xem </a>
+                                                            }
+                                                        }
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="" class="btn btn-success btn-xs"> Sửa </a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="" class="btn btn-danger btn-xs"> Xóa </a>
+                                                    </div>
+                                                </div>*@
+                                            @{
+                                                if (item.CT.ToUpper() == "YES")
+                                                {
+                                                    <a class="btn btn-info btn-xs" href="#">
+                                                        <i class="fas fa-book">
+                                                        </i> Xem
+                                                    </a>
+                                                }
+                                            }
+
+                                            <a class="btn btn-info btn-xs" href="#">
+                                                <i class="fas fa-pencil-alt">
+                                                </i>
+                                                Sửa
+                                            </a>
+
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="custom-checkbox" value="" @(item.SUDUNG == true ? "checked" : "") disabled>
+                                        </td>
+                                        @*<td class="project-state">
+                                                <span class="badge badge-success"> @(item.SUDUNG == true ? "Sử dụng" : "")</span>
+                                            </td>*@
+
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th class="text-center">Tổng</th>
+                                    <th class="text-right"> @( DinhDangModul.GetDinhDangGiaTien(ViewBag.TongNo))</th>
+                                    <th class="text-right"> @( DinhDangModul.GetDinhDangGiaTien(ViewBag.TongCo))</th>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

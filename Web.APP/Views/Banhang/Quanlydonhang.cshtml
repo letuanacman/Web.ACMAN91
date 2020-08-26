@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Quản lý đơn hàng";
+    Layout = "~/Views/Shared/_LayoutBanHang.cshtml";
+}
+ 
+@using Web.APP.Extentions;
+
+@model IEnumerable<Web.Entities.DN_Entity_ShopBanHang>
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h3 class="m-0 text-dark">@ViewBag.Title</h3>
+            </div><!-- /.col -->
+            <div class="col-sm-6 text-right">
+                <a href="" class="btn btn-sm btn-success"> Thêm đơn hàng </a>
+                <a href="" class="btn btn-sm btn-success"> Xuất ra excel</a>
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="Tbl_TaiKhoanSoDu" class="table table-bordered table-hover">
+                            <thead>
+                                <tr class="align-text-top">
+                                    <th style="width: 5%">Ngày</th>
+                                    <th style="width: 5%">Số đơn hàng</th>
+                                    <th style="width: 30%">Nội dung</th>
+                                    <th style="width: 15%">Tên khách hàng</th>
+                                    <th style="width: 5%">Điện thoại</th>
+                                    <th style="width: 25%">Địa chỉ nhận</th>
+                                    <th style="width: 5%">Tiền hàng</th>
+                                    <th style="width: 15%">NV kinh doanh</th>
+                                    <th style="width: 15%">NV giao hàng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td> @Html.DisplayFor(modemitem => item.NGAY)</td>
+                                    <td> @Html.DisplayFor(modemitem => item.SO_DONHANG)</td>
+                                    <td> @Html.DisplayFor(modemitem => item.GHI_CHU)</td>
+                                    <td>@Html.DisplayFor(modemitem => item.TEN_VT)</td>
+                                    <td>@Html.DisplayFor(modemitem => item.TEL) </td>
+                                    <td> @Html.DisplayFor(modemitem => item.DIA_CHI_NHAN)</td>
+                                    <td class="text-right"> @( DinhDangModul.GetDinhDangGiaTien( item.TONG_TIEN.GetValueOrDefault(0)))</td>
+                                    <td> @Html.DisplayFor(modemitem => item.NV_PHUCVU)</td>
+                                    <td> @Html.DisplayFor(modemitem => item.NV_GIAOHANG)</td>
+                                </tr>
+
+                                }
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th class="text-center">Tổng</th>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th class="text-right"> @( DinhDangModul.GetDinhDangGiaTien(10000))</th> 
+                                    <th> </th>
+                                    <th> </th> 
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

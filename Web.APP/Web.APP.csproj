@@ -124,9 +124,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BanhangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KetoanController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Extentions\DinhDangModul.cs" />
     <Compile Include="Extentions\SecurityExtention.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2246,7 +2248,11 @@
     <Content Include="Views\Shared\_LayoutKeToan.cshtml" />
     <Content Include="Views\Shared\_LeftMenuKetoan.cshtml" />
     <Content Include="Views\Ketoan\Index.cshtml" />
-    <Content Include="Views\Ketoan\ViewTaikhoanSodu.cshtml" />
+    <Content Include="Views\Ketoan\TaikhoanSodu.cshtml" />
+    <Content Include="Views\Shared\_LayoutBanHang.cshtml" />
+    <Content Include="Views\Shared\_LeftMenuBanHang.cshtml" />
+    <Content Include="Views\Banhang\Quanlydonhang.cshtml" />
+    <Content Include="Views\Banhang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

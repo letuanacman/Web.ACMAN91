@@ -39,13 +39,26 @@ namespace Web.APP.Controllers
                         {
                             Session["User_DN"] = new LoginInfoModel()
                             { U_ID = _Login.U_ID, TEN_DANGNHAP = _Login.USERNAME, FULLNAME = _Login.FULLNAME, TEN_DATA = model.TEN_DATA };
-                            DN_BL_Donvi _BL_Donvi = new DN_BL_Donvi()  ;
+                            DN_BL_Donvi _BL_Donvi = new DN_BL_Donvi();
                             DN_Entity_Donvi dv = new DN_Entity_Donvi();
                             dv = _BL_Donvi.Get_Donvi();
                             Session["Donvi_Info"] = new DonviInfoModel()
-                            { Ma_so=dv.Ma_so,Ten_dv=dv.Ten_dv,Ten_dv_English=dv.Ten_dv_English,Giamdoc=dv.Giamdoc,dia_chi=dv.dia_chi,Nam_tc=dv.Nam_tc,
-                            QHuyen=dv.QHuyen,City=dv.City,TK=dv.TK,NHang=dv.NHang,Tel=dv.Tel,Email=dv.Email};
-                            return RedirectToAction("Index", "Ketoan");
+                            {
+                                Ma_so = dv.Ma_so,
+                                Ten_dv = dv.Ten_dv,
+                                Ten_dv_English = dv.Ten_dv_English,
+                                Giamdoc = dv.Giamdoc,
+                                dia_chi = dv.dia_chi,
+                                Nam_tc = dv.Nam_tc,
+                                QHuyen = dv.QHuyen,
+                                City = dv.City,
+                                TK = dv.TK,
+                                NHang = dv.NHang,
+                                Tel = dv.Tel,
+                                Email = dv.Email
+                            };
+                            Session["NamTC"] = dv.Nam_tc;
+                            return RedirectToAction("Index", "Banhang");
                         }
                         else
                         {
@@ -57,7 +70,7 @@ namespace Web.APP.Controllers
                         ModelState.AddModelError("", "Sai thông tin Đăng nhập");
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     throw;
                 }
@@ -71,7 +84,7 @@ namespace Web.APP.Controllers
         public ActionResult LogOut()
         {
             Session.Clear();
-            return RedirectToAction("Index", "Home" ); 
+            return RedirectToAction("Index", "Home");
         }
     }
 }

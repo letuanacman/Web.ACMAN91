@@ -47,6 +47,7 @@
     <Compile Include="Doanh_Nghiep\DN_BL_BangTK.cs" />
     <Compile Include="Doanh_Nghiep\DN_BL_Donvi.cs" />
     <Compile Include="Doanh_Nghiep\DN_BL_Login.cs" />
+    <Compile Include="Doanh_Nghiep\DN_BL_QLBanHang.cs" />
     <Compile Include="Master\Master_BL_LoginData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

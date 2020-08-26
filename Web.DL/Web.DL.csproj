@@ -72,6 +72,7 @@
     <Compile Include="Doanh_Nghiep\DN_DL_BangTK.cs" />
     <Compile Include="Doanh_Nghiep\DN_DL_Donvi.cs" />
     <Compile Include="Doanh_Nghiep\DN_DL_Login.cs" />
+    <Compile Include="Doanh_Nghiep\DN_DL_QLBanHang.cs" />
     <Compile Include="Master\Master_DbContext.cs" />
     <Compile Include="Master\Master_DL_LoginData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

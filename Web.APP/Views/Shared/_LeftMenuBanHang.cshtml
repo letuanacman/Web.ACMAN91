@@ -1,0 +1,94 @@
+﻿
+<aside class="main-sidebar sidebar-dark-lightblue elevation-3 top-left">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link lightblue">
+        <img src="~/Content/Images/logo-icon310.png" alt="Acman" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-lighter">ACMAN - SHOP </span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <!--"nav-item has-treeview">-->
+                    <a href="@Url.Action("Index", "Banhang")" class="nav-link">
+                        <i class="nav-icon fa fa-th-large"></i>
+                        <p>Bảng thông tin </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <!--"nav-item has-treeview">-->
+                    <a href="@Url.Action("Quanlydonhang", "Banhang",new {NamTC=Session["NamTC"]})" class="nav-link">
+                        <i class="nav-icon fa fa-database"></i>
+                        <p>Quản lí đơn hàng</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <!--"nav-item has-treeview">-->
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-database"></i>
+                        <p>Quản lí hóa đơn</p>
+                    </a>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-th-list"></i>
+                        <p>
+                            Danh mục hàng hóa
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-users nav-icon"></i>
+                                <p>Khách hàng</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa fa-users nav-icon"></i>
+                                <p>Nhà cung cấp</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-cog "></i>
+                        <p>
+                            Hệ thống
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="pages/forms/general.html" class="nav-link">
+                                <i class="nav-icon fa fa-user"></i>
+                                <p>Quản lý người dùng</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/forms/advanced.html" class="nav-link">
+                                <i class="fa fa fa-lock nav-icon"></i>
+                                <p>Thay đổi mật khẩu</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
+
