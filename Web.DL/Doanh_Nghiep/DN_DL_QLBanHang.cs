@@ -20,8 +20,8 @@ namespace Web.DL
             obj.THANG = (dr["THANG"] is DBNull) ? short.MinValue : Convert.ToInt16(dr["THANG"]);
             obj.NGAY = (dr["NGAY"] is DBNull) ? DateTime.MinValue : Convert.ToDateTime(dr["NGAY"]);
             obj.NGAYTT = (dr["NGAYTT"] is DBNull) ? DateTime.MinValue : Convert.ToDateTime(dr["NGAYTT"]);
-            obj.NGAY_GIAOHANG = (dr["NGAY_GIAOHANG"] is DBNull) ? DateTime.MinValue : Convert.ToDateTime(dr["NGAY_GIAOHANG"]);
-            obj.NGAY_COHANG = (dr["NGAY_COHANG"] is DBNull) ? DateTime.MinValue : Convert.ToDateTime(dr["NGAY_COHANG"]);
+            obj.NGAY_GIAOHANG = (dr["NGAY_GIAOHANG"] is DBNull) ? DateTime.Now : (DateTime)(dr["NGAY_GIAOHANG"]);
+            obj.NGAY_COHANG = (dr["NGAY_COHANG"] is DBNull) ? DateTime.Now : (DateTime)dr["NGAY_COHANG"];
             obj.MAUFULLHD = (dr["MAUFULLHD"] is DBNull) ? String.Empty : (String)dr["MAUFULLHD"];
             obj.KYHIEU_HD = (dr["KYHIEU_HD"] is DBNull) ? String.Empty : (String)dr["KYHIEU_HD"];
             obj.SO_HD = (dr["SO_HD"] is DBNull) ? String.Empty : (String)dr["SO_HD"];
@@ -84,7 +84,7 @@ namespace Web.DL
         }
 
         // Search DoanhNghieps
-        public List<DN_Entity_ShopBanHang> GetHoadonBanHang(int NamTC, int PageIndex, int PageSize, int Loai)
+        public List<DN_Entity_ShopBanHang> GetHoadonBanHang(int NamTC,  int Loai)
         {
 
             using (DN_DbContext db = new DN_DbContext())

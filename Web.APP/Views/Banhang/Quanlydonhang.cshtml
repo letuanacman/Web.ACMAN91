@@ -3,11 +3,11 @@
     ViewBag.Title = "Quản lý đơn hàng";
     Layout = "~/Views/Shared/_LayoutBanHang.cshtml";
 }
- 
+
 @using Web.APP.Extentions;
-
-@model IEnumerable<Web.Entities.DN_Entity_ShopBanHang>
-
+@model PagedList.IPagedList<Web.Entities.DN_Entity_ShopBanHang>
+@using PagedList;
+@using PagedList.Mvc;
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
@@ -16,7 +16,7 @@
                 <h3 class="m-0 text-dark">@ViewBag.Title</h3>
             </div><!-- /.col -->
             <div class="col-sm-6 text-right">
-                <a href="" class="btn btn-sm btn-success"> Thêm đơn hàng </a>
+                <a href="@Url.Action("Create", "Banhang")" class="btn btn-sm btn-success"> Thêm đơn hàng </a>
                 <a href="" class="btn btn-sm btn-success"> Xuất ra excel</a>
             </div>
         </div><!-- /.row -->
@@ -30,26 +30,28 @@
             <div class="col-12">
                 <div class="card">
                     <!-- /.card-header -->
-                    <div class="card-body">
-                        <table id="Tbl_TaiKhoanSoDu" class="table table-bordered table-hover">
+                    <div class="table-responsive">
+                        <table id="Tbl_TaiKhoanSoDu" class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr class="align-text-top">
                                     <th style="width: 5%">Ngày</th>
                                     <th style="width: 5%">Số đơn hàng</th>
-                                    <th style="width: 30%">Nội dung</th>
+                                    <th style="width: 25%">Nội dung</th>
                                     <th style="width: 15%">Tên khách hàng</th>
                                     <th style="width: 5%">Điện thoại</th>
-                                    <th style="width: 25%">Địa chỉ nhận</th>
+                                    <th style="width: 20%">Địa chỉ nhận</th>
                                     <th style="width: 5%">Tiền hàng</th>
-                                    <th style="width: 15%">NV kinh doanh</th>
-                                    <th style="width: 15%">NV giao hàng</th>
+                                    <th style="width: 10%">NV kinh doanh</th>
+                                    <th style="width: 10%">NV giao hàng</th>
+                                    <th style="width: 5%">Trạng thái</th>
+                                    <th style="width: 5%"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
                                 <tr>
-                                    <td> @Html.DisplayFor(modemitem => item.NGAY)</td>
+                                    <td> @(item.NGAY.HasValue? DinhDangModul.FormatDate(item.NGAY.Value) : "") </td>
                                     <td> @Html.DisplayFor(modemitem => item.SO_DONHANG)</td>
                                     <td> @Html.DisplayFor(modemitem => item.GHI_CHU)</td>
                                     <td>@Html.DisplayFor(modemitem => item.TEN_VT)</td>
@@ -58,26 +60,47 @@
                                     <td class="text-right"> @( DinhDangModul.GetDinhDangGiaTien( item.TONG_TIEN.GetValueOrDefault(0)))</td>
                                     <td> @Html.DisplayFor(modemitem => item.NV_PHUCVU)</td>
                                     <td> @Html.DisplayFor(modemitem => item.NV_GIAOHANG)</td>
+                                    <td> @Html.DisplayFor(modemitem => item.TRANG_THAI_DH)</td>
+                                    <td class="text-right">
+                                        <div class="text-right">
+                                            <a class="btn btn-info btn-xs" href="#">
+                                                @*<i class="fas fa-pencil-alt">
+            </i>*@
+                                                Sửa
+                                            </a>
+                                            <a class="btn btn-danger btn-xs" href="#">
+                                                @*<i class="fas fa-trash-restore-alt">
+            </i>*@
+                                                Xóa
+                                            </a>
+                                        </div>
+                                       
+                                    </td>
                                 </tr>
-
                                 }
-
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th> </th>
                                     <th> </th>
                                     <th> </th>
                                     <th class="text-center">Tổng</th>
                                     <th> </th>
                                     <th> </th>
                                     <th> </th>
-                                    <th class="text-right"> @( DinhDangModul.GetDinhDangGiaTien(10000))</th> 
+                                    <th class="text-right"> @( DinhDangModul.GetDinhDangGiaTien(10000))</th>
                                     <th> </th>
-                                    <th> </th> 
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
                                 </tr>
                             </tfoot>
                         </table>
+
+                        <div class="justify-content-end">
+                          
+                            @Html.PagedListPager(Model, sotrang => Url.Action("Quanlydonhang", new { NamTC = 2020, page = sotrang }), new PagedListRenderOptions { FunctionToTransformEachPageLink = (liTag, aTag) => { aTag.Attributes.Add("class", "page-link".ToString()); return aTag; }, LiElementClasses = new[] { "page-item" }, UlElementClasses = new[] { "pagination  justify-content-end" } })
+                        </div>
+
                     </div>
                     <!-- /.card-body -->
                 </div>

@@ -10,10 +10,10 @@ namespace Web.BL
 {
     public class DN_BL_QLBanHang
     {
-        public List<DN_Entity_ShopBanHang> GetHoadonBanHang(int NamTC, int PageIndex, int PageSize,int Loai)
+        public List<DN_Entity_ShopBanHang> GetHoadonBanHang(int NamTC,int Loai)
         {
             DN_DL_QLBanHang DL = new DN_DL_QLBanHang();
-            return DL.GetHoadonBanHang(NamTC, PageIndex, PageSize,Loai); ;
+            return DL.GetHoadonBanHang(NamTC, Loai); ;
         }
     }
 }

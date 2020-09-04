@@ -1,7 +1,6 @@
 const inputs = document.querySelectorAll(".input");
 
-
-function addcl(){
+function addcl() {
 	let parent = this.parentNode.parentNode;
 	parent.classList.add("focus");
 }
@@ -13,6 +12,11 @@ function remcl(){
 	}
 }
 
+$(function ()
+{
+	$('#AlertBox').removeClass('hide');
+	$('#ALertBox').delay(1000).slideUp(500);
+})
 
 inputs.forEach(input => {
 	input.addEventListener("focus", addcl);

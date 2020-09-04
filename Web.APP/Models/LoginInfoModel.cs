@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Web.APP.Models
 {
+    [Serializable]
     public class LoginInfoModel
     {
         public string TEN_DATA { get; set; }
